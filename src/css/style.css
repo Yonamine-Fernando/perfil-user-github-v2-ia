@@ -2,32 +2,104 @@
 
 
 body {
-  background-color:#24292e;
-  font-family: "Kumbh Sans", sans-serif;  
-  text-align: center;    
+  background-color: #24292e;
+  font-family: "Kumbh Sans", sans-serif;
+  text-align: center;
   padding-bottom: 100px;
 }
 
-main {
-  display: flex;  
-  justify-content: center;
-  flex-direction: column;
-  padding: 50px 0 0;    
+/* Card de perfil moderno */
+.profile-card {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 40px 50px;
+  gap: 50px;
+  max-width: 700px;
+  margin: 40px auto;
+  transition: box-shadow 0.3s;
 }
 
-.devicon-github-original{
+.profile-card:hover {
+  box-shadow: 0 16px 48px 0 rgba(31, 38, 135, 0.45);
+}
+
+.profile-card img.profile-avatar {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 15px;
+  transition: transform 0.3s;
+}
+
+.profile-card img.profile-avatar:hover {
+  transform: scale(1.05) rotate(-2deg);
+}
+
+.profile-card .profile-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  flex: 1;
+  padding-left: 10px;
+}
+
+.profile-card .profile-info h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 18px;
+  color: #24292e;
+}
+
+.profile-card .profile-info p {
+  font-size: 1.1rem;
+  color: #444;
+  margin-bottom: 12px;
+}
+
+@media (max-width: 800px) {
+  .profile-card {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 30px 10px;
+    max-width: 95vw;
+  }
+
+  .profile-card .profile-info {
+    align-items: center;
+    padding-left: 0;
+  }
+
+  .profile-card img.profile-avatar {
+    width: 160px;
+    height: 160px;
+  }
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 50px 0 0;
+}
+
+.devicon-github-original {
   font-size: 60px;
   margin-bottom: 30px;
   color: #FFFFFF;
 }
 
-.section{
+.section {
   padding: 70px 0;
 }
 
 .container {
-  width: 60%; /* se for uma tela menor que 980px vai se adaptar a 70% */
-  max-width: 960px; /* quando chegar em 980px para de aumentar */
+  width: 60%;
+  /* se for uma tela menor que 980px vai se adaptar a 70% */
+  max-width: 960px;
+  /* quando chegar em 980px para de aumentar */
   box-shadow: rgba(0, 0, 0, 0.3) 0px 25px 50px -12px;
   background-color: #fff;
   display: flex;
@@ -36,7 +108,7 @@ main {
   border-radius: 30px;
   padding: 30px;
   margin: 0 auto;
-  box-shadow: 0px 0px 100px 24px rgba(255,255,255,0.62);
+  box-shadow: 0px 0px 100px 24px rgba(255, 255, 255, 0.62);
 }
 
 .container header {
@@ -66,7 +138,7 @@ main {
   font-size: 17px;
   margin: 20px auto 0;
   padding: 10px;
-  border-radius: 7px;  
+  border-radius: 7px;
   cursor: pointer;
   border: 1px solid grey;
 }
@@ -77,99 +149,13 @@ main {
   border-color: #ffffff;
 }
 
-.container .profile-data{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 40px;  
+.profile-data .loading {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
 }
 
-.container .profile-data .info {
-  display: flex;  
-  flex-wrap: wrap;
-  align-items: center;
-}
-
-.container .profile-data .info .data{
-  width: 50%;
-  padding: 40px;
-}
-
-.container .profile-data .info img{
-  width: 50%;
-  border-radius: 50%;
-  position: relative;
-  border: 10px solid rgb(83, 174, 163);
-}
-
-.container .profile-data .info h1{
-  font-size: 20px;
-  margin-bottom: 20px;
-  font-weight: 700;
-}
-
-.container .profile-data .info p{
-  font-size: 15px;  
-  font-weight: 400;
-  line-height: 23px;
-}
-.container .profile-data .info p i {
-  font-weight: 600;
-}
-
-.container .profile-data .repositories h2{
-  margin: 30px;
-  text-align: center;
-}
-
-.container .profile-data .repositories ul{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.container .profile-data .repositories ul li a{
-  padding: 20px;
-  border: 1px solid grey;  
-  margin: 20px;
-  display: block;
-  border-radius: 7px;
-  box-shadow: 10px 10px 17px -10px rgba(0,0,0,0.57);
-  transition: 0.3s ease-in-out;
-}
-
-.container .profile-data .repositories ul li a:hover{
-  background-color:rgb(37, 93, 86);
-  color: #fff
-}
-
-.container .profile-data .repositories .makers ul{
-  display: flex;
-  justify-content: center;
-  gap: 5px;
-}
-
-.container .profile-data .repositories .makers ul li{
-  font-size: 12px;
-}
-
-.container .profile-data.hide{
-  display: none;
-}
-
-.container .profile-data .events {
-  display: flex;
-  flex-direction: column;
-}
-
-.container .profile-data .events h2{
-  text-align: center;
-  margin: 30px;
-}
-.container .profile-data .events ul li {
-  padding: 10px;
-}
-
-.container .profile-data .events ul li span {
-  font-weight: 600;
+.profile-data .loading.show {
+    display: flex;
 }
