@@ -150,12 +150,30 @@ main {
 }
 
 .profile-data .loading {
-    display: none;
-    justify-content: center;
-    align-items: center;
-    height: 100px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
 }
 
 .profile-data .loading.show {
-    display: flex;
+  display: flex;
+}
+
+.profile-counters {
+  display: flex;
+  gap: 32px;
+  justify-content: center;
+  margin: 30px 0;
+}
+
+.profile-counters h4 {
+  font-size: 0.75rem;
+  margin-bottom: 8px;
+  text-transform:uppercase;
+}
+
+.profile-counters span {
+  font-size: 2rem;
+  font-weight: bold;
 }
