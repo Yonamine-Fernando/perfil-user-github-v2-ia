@@ -28,3 +28,9 @@ async function handleSearch() {
 
 btnSearch.addEventListener('click', handleSearch);
 
+inputSearch.addEventListener('keyup', (e) => {
+    if (e.key === 'Enter') {
+        handleSearch();
+    }
+});
+
