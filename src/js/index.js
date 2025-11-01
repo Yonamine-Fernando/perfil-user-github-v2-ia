@@ -1,5 +1,5 @@
 
-import { fetchUser } from './apiGit.js';
+import { fetchUser, fetchRespo } from './apiGit.js';
 import { showLoading, hideLoading, renderProfile, showError } from './ui.js';
 
 const inputSearch = document.getElementById('input-search');
@@ -16,7 +16,9 @@ async function handleSearch() {
     showLoading(loadingElement);
     try {
         const userData = await fetchUser(userName);
-        renderProfile(profileResults, userData);
+        const userRespo = await fetchRespo(userName)
+        renderProfile(profileResults, userData, userRespo);
+        
     } catch (error) {
         showError('Usuário não encontrado. Por favor verifique o nome do usuário e tente novamente.');
     } finally {

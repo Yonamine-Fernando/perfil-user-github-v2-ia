@@ -7,7 +7,22 @@ export function hideLoading(loadingElement) {
     loadingElement.classList.remove('show');
 }
 
-export function renderProfile(profileResults, userData) {
+export function renderProfile(profileResults, userData, userRespo) {
+
+    const respositoriesHTML = userRespo.length > 0 ? userRespo.map(repo => `
+        <a href="${repo.html_url}" target="_blak">
+           <div class="repository-card">
+              <h3>${repo.name}</h3>
+              <div class="repository-stats">
+                <span>⭐️ Stars: ${repo.stargazers_count}</span>
+                <span>🍴 Forks: ${repo.fork_count}</span>
+                <span>👀 Watchers: ${repo.watchers.count}</span>
+                <span>💻 Language: ${repo.language || "N/A"}</span>
+            </div>
+          </div>
+        </a>
+        `).join('') : '<p>Nenhum repositório encontrado.😕</p>';
+
     profileResults.innerHTML = `
         <div class="profile-card">
             <img src="${userData.avatar_url}" alt="Avatar de ${userData.name}" class="profile-avatar">
@@ -24,6 +39,13 @@ export function renderProfile(profileResults, userData) {
             <div class="following">
                 <h4>👥 Seguindo</h4>
                 <span>${userData.following}</span>
+            </div>
+        </div>
+
+        <divclass="profile-respositories">
+            <h2>Repositórios</h2>
+            <div class="repositories">
+                ${respositoriesHTML}
             </div>
         </div>
     `;

@@ -170,10 +170,89 @@ main {
 .profile-counters h4 {
   font-size: 0.75rem;
   margin-bottom: 8px;
-  text-transform:uppercase;
+  text-transform: uppercase;
 }
 
 .profile-counters span {
   font-size: 2rem;
   font-weight: bold;
+}
+
+.repositories {
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Card de repositório moderno e criativo */
+.repository-card {
+  background: linear-gradient(135deg, #f8fafc 60%, #e6f7f4 100%);
+  border: 1.5px solid #e1e4e8;
+  border-radius: 16px;
+  box-shadow: 0 4px 18px rgba(83, 174, 163, 0.10);
+  padding: 20px 10px;
+  width: 290px;
+  height:270px;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.2s, border-color 0.2s, transform 0.2s;
+  margin-bottom: 10px;
+}
+
+.repository-card:hover {
+  box-shadow: 0 8px 32px rgba(83, 174, 163, 0.18);
+  border-color: #53aea3;
+  transform: translateY(-4px) scale(1.03);
+}
+
+.repository-card h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 14px;
+  color: #2186ae;
+  text-align: left;
+  letter-spacing: 0.5px;
+}
+
+.repository-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  width: 100%;
+}
+
+.repository-stats span {
+  font-size: 1rem;
+  color: #444;
+  background: #eff2f3;
+  border-radius: 7px;
+  padding: 5px 10px;
+  margin-bottom: 2px;
+  box-shadow: 0 1px 4px rgba(31, 38, 135, 0.04);
+  display: flex;
+  align-items: left;
+  gap: 6px;
+}
+
+.repository-stats span:hover {
+  background: #93f0df;
+}
+
+.repository-stats span:last-child {
+  font-weight: 600;
+  color: #53aea3;
+  background: #e6f7f4;
+  text-align: left;
+}
+
+@media (max-width: 900px) {
+
+  .repository-card {
+    min-width: 160px;
+    max-width: 95vw;
+    padding: 14px 10px;
+  }
 }
