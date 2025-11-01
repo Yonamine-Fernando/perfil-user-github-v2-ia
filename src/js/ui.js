@@ -27,7 +27,7 @@ export function renderProfile(profileResults, userData, userRespo) {
         <div class="profile-card">
             <img src="${userData.avatar_url}" alt="Avatar de ${userData.name}" class="profile-avatar">
             <div class="profile-info">
-                <h2>${userData.name}</h2>
+                <h2>${userData.name || "Sem nome disponível...😉"}</h2>
                 <p>${userData.bio || "Sem biografia disponível...😕"}</p>
             </div>
         </div>
